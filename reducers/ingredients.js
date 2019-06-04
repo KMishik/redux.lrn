@@ -1,4 +1,4 @@
-import { ADD_INGREDIENT } from '../constants/action-types';
+import { ADD_INGREDIENT, SET_INGREDIENTS } from '../constants/action-types';
 
 const ingredientsReducer = (ingredients=[], action) => {
 
@@ -10,6 +10,9 @@ const ingredientsReducer = (ingredients=[], action) => {
         quantity: action.quantity
       };
       return  ingredients.concat(newIngredient);
+
+    case SET_INGREDIENTS:
+      return action.ingredients;
   }
 
   return ingredients;

@@ -3,7 +3,7 @@ import store from '../../store/store';
 import { addRecipe } from '../../actions/recipes';
 
 function updateUI() {
-  const { recipes }= store.getState();
+  const { recipes } = store.getState();
   const renderRecipe = (recipe) => `<li>${recipe.name}</li>`;
 
   $('.recipes > ul').html(recipes.map(renderRecipe));
@@ -16,7 +16,8 @@ function handleAdd() {
 
   $recipeName.val('');
 }
- export default function loadUI() {
+
+export default function loadUI() {
   $('#app').append(`
     <div class="recipes">
       <h2>Recipes:</h2>
