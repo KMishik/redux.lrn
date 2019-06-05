@@ -10,7 +10,7 @@ function fetchData(url, callback) {
             if (response.status !== 200) {
                 console.log(`Error fetching recipes: ${response.status}`);
             } else {
-                response.json().then(callback);
+                response.json().then(callback).catch((err) => console.log(`Error unserialized response: ${err}`));
             }
         })
         .catch((err) => console.log(`Error fetching recipes: ${err}`));
